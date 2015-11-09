@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   # root route
   root "artists#index"
+
+  # TODO: songs are Bonus!
 end
