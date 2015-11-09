@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get    '/artists/:id'       => 'artists#show'
   post   '/artists'           => 'artists#create'
   get    '/artists/:id/edit'  => 'artists#edit'
-  put    '/artists/:id'       => 'artists#update'
+  patch  '/artists/:id'       => 'artists#update'
   delete '/artists/:id'       => 'artists#destroy'
 
   # root route
