@@ -2,7 +2,7 @@
 
 <!-- When a user clicks edit... -->
 <form action="/artists/<%= @artist.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="_method" value="patch">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <label for="artist[name]">Name:</label>
