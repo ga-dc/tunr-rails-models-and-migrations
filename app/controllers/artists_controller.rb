@@ -1,39 +1,37 @@
 class ArtistsController < ApplicationController
-  # Artists#Index
   def index
     @artists = Artist.all
   end
-  # Artists#Show
+
   def show
     @artist = Artist.find(params[:id])
   end
-  # Artists#New
+
   def new
   end
-  # Artists#Create
+
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
       redirect_to "/artists/#{@artist.id}"
     else
-      redirect_to "/artists/new"
+      render :new
     end
   end
-  # Artists#Edit
+
   def edit
     @artist = Artist.find(params[:id])
   end
-# Artists#Update
+
   def update
     @artist = Artist.find(params[:id])
-    @artist.update(artist_params)
-    if @artist.save
+    if @artist.update(artist_params)
       redirect_to "/artists/#{@artist.id}"
     else
-      redirect_to "/artists/#{@artist.id}/edit"
+      render :edit
     end
   end
-# Artists#Destroy
+
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
