@@ -16,12 +16,8 @@ class ArtistsController < ApplicationController
 
   # POST   /artists
   def create
-    @artist = Artist.new(artist_params)
-    if @artist.save
-      redirect_to "/artists/#{@artist.id}"
-    else
-      render :new
-    end
+    @artist = Artist.create!(artist_params)
+    redirect_to "/artists/#{@artist.id}"
   end
 
   # GET /artists/:id/edit
@@ -32,11 +28,8 @@ class ArtistsController < ApplicationController
   # PATCH  /artists/:id
   def update
     @artist = Artist.find(params[:id])
-    if @artist.update(artist_params)
-      redirect_to "/artists/#{@artist.id}"
-    else
-      render :edit
-    end
+    @artist.update!(artist_params)
+    redirect_to "/artists/#{@artist.id}"
   end
 
   # DELETE /artists/:id
