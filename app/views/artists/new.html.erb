@@ -3,13 +3,13 @@
 <form action="/artists" method="post" >
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="name">Name:</label>
-  <input name="name">
+  <input name="artist[name]">
 
   <label for="photo_url">Photo URL:</label>
-  <input name="photo_url">
+  <input name="artist[photo_url]">
 
   <label for="nationality">Nationality:</label>
-  <input name="nationality">
+  <input name="artist[nationality]">
 
   <input type="submit" value="Create">
 </form>
