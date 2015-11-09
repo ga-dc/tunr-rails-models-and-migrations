@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: tunr_development
+  database: tunr_db
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
